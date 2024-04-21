@@ -1,4 +1,6 @@
 import Column from "../Column/Column";
+import { statusList } from "../../../data";
+import { cardList } from "../../../data";
 
 function Main() {
   return (
@@ -6,15 +8,13 @@ function Main() {
       <div className="container">
         <div className="main__block">
           <div className="main__content">
-            <Column status="Без статуса" />
-
-            <Column status="Нужно сделать" />
-
-            <Column status="В работе" />
-
-            <Column status="Тестирование" />
-
-            <Column status="Готово" />
+            {statusList.map((status) => (
+              <Column
+                key={status}
+                title={status}
+                cardList={cardList.filter((card) => card.status === status)}
+              />
+            ))}
           </div>
         </div>
       </div>

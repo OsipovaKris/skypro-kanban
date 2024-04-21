@@ -864,7 +864,7 @@ body {
 .card__theme p {
   font-size: 10px;
   font-weight: 600;
-  line-height: 10px;
+  line-height: 5px;
 }
 .card__btn {
   width: 24px;
