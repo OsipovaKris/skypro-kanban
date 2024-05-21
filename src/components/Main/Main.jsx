@@ -1,8 +1,7 @@
 import Column from "../Column/Column";
 import { statusList } from "../../../data";
-import { cardList } from "../../../data";
 
-function Main() {
+function Main({ cardsList }) {
   return (
     <main className="main">
       <div className="container">
@@ -12,7 +11,7 @@ function Main() {
               <Column
                 key={status}
                 title={status}
-                cardList={cardList.filter((card) => card.status === status)}
+                cardList={cardsList.filter((card) => card.status === status)}
               />
             ))}
           </div>

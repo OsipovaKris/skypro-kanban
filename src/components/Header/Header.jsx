@@ -1,10 +1,21 @@
 import { useState } from "react";
 
-function Header() {
+function Header({ cardsList, setCardsList }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function toogleDropdown() {
     setIsOpen(!isOpen);
+  }
+
+  function addCard() {
+    const newCard = {
+      id: cardsList.length + 1,
+      topic: "Web Design",
+      title: "Новая задача",
+      date: "30.10.23",
+      status: "Без статуса",
+    };
+    setCardsList([...cardsList, newCard]);
   }
 
   return (
@@ -22,8 +33,12 @@ function Header() {
             </a>
           </div>
           <nav className="header__nav">
-            <button className="header__btn-main-new _hover01" id="btnMainNew">
-              <a href="#popNewCard">Создать новую задачу</a>
+            <button
+              onClick={addCard}
+              className="header__btn-main-new _hover01"
+              id="btnMainNew"
+            >
+              <a>Создать новую задачу</a>
             </button>
             <a className="header__user _hover02" onClick={toogleDropdown}>
               Ivan Ivanov
