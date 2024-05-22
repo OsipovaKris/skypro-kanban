@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import PopBrowse from "./components/Popups/PopBrowse";
@@ -9,6 +10,14 @@ import { cardList } from "../data";
 
 function App() {
   const [cardsList, setCardsList] = useState(cardList);
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(!isLoading);
+    }, 2000);
+  }, []);
 
   return (
     <>
@@ -21,7 +30,7 @@ function App() {
 
         <Header setCardsList={setCardsList} cardsList={cardsList} />
 
-        <Main cardsList={cardsList} />
+        <Main cardsList={cardsList} isLoading={isLoading} />
       </div>
 
       <script src="js/script.js"></script>
