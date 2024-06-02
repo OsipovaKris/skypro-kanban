@@ -1,4 +1,5 @@
 import * as S from "./Header.styled";
+import { Container } from "../Styles/Common.styled";
 import { useState } from "react";
 
 function Header({ cardsList, setCardsList }) {
@@ -21,7 +22,7 @@ function Header({ cardsList, setCardsList }) {
 
   return (
     <S.Header>
-      <S.Container>
+      <Container>
         <S.HeaderBlock>
           {/* здесь было <div className="header__logo _show _light"> */}
 
@@ -58,7 +59,7 @@ function Header({ cardsList, setCardsList }) {
             )}
           </S.HeaderNav>
         </S.HeaderBlock>
-      </S.Container>
+      </Container>
     </S.Header>
   );
 }

@@ -9,6 +9,13 @@ export const Wrapper = styled.div`
   background-color: #f1f1f1;
 `;
 
+export const Container = styled.div`
+  max-width: 1260px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+`;
+
 export const hover01 = css`
   &:hover {
     background-color: #33399b;

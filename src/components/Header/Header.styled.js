@@ -1,19 +1,10 @@
 import styled from "styled-components";
 import { hover01, hover02, hover03 } from "../Styles/Common.styled";
 
-export const sssss = styled.div``;
-
 export const Header = styled.header`
   width: 100%;
   margin: 0 auto;
   background-color: #ffffff;
-`;
-
-export const Container = styled.div`
-  max-width: 1260px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 30px;
 `;
 
 export const HeaderBlock = styled.div`
