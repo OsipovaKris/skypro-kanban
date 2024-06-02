@@ -1,3 +1,4 @@
+import * as S from "./Header.styled";
 import { useState } from "react";
 
 function Header({ cardsList, setCardsList }) {
@@ -19,9 +20,9 @@ function Header({ cardsList, setCardsList }) {
   }
 
   return (
-    <header className="header">
-      <div className="container">
-        <div className="header__block">
+    <S.Header>
+      <S.Container>
+        <S.HeaderBlock>
           <div className="header__logo _show _light">
             <a href="" target="_self">
               <img src="/logo.png" alt="logo" />
@@ -32,7 +33,7 @@ function Header({ cardsList, setCardsList }) {
               <img src="/logo_dark.png" alt="logo" />
             </a>
           </div>
-          <nav className="header__nav">
+          <S.HeaderNav>
             <button
               onClick={addCard}
               className="header__btn-main-new _hover01"
@@ -48,21 +49,21 @@ function Header({ cardsList, setCardsList }) {
                 className="header__pop-user-set pop-user-set"
                 id="user-set-target"
               >
-                <p className="pop-user-set__name">Ivan Ivanov</p>
-                <p className="pop-user-set__mail">ivan.ivanov@gmail.com</p>
-                <div className="pop-user-set__theme">
+                <S.PopUserSetName>Ivan Ivanov</S.PopUserSetName>
+                <S.PopUserSetMail>ivan.ivanov@gmail.com</S.PopUserSetMail>
+                <S.PopUserSetTheme>
                   <p>Темная тема</p>
-                  <input type="checkbox" className="checkbox" name="checkbox" />
-                </div>
+                  <input type="checkbox" name="checkbox" />
+                </S.PopUserSetTheme>
                 <button type="button" className="_hover03">
                   <a href="#popExit">Выйти</a>
                 </button>
               </div>
             )}
-          </nav>
-        </div>
-      </div>
-    </header>
+          </S.HeaderNav>
+        </S.HeaderBlock>
+      </S.Container>
+    </S.Header>
   );
 }
 
