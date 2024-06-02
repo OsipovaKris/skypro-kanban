@@ -23,42 +23,38 @@ function Header({ cardsList, setCardsList }) {
     <S.Header>
       <S.Container>
         <S.HeaderBlock>
-          <div className="header__logo _show _light">
+          {/* здесь было <div className="header__logo _show _light"> */}
+
+          <S.HeaderLogo>
             <a href="" target="_self">
               <img src="/logo.png" alt="logo" />
             </a>
-          </div>
-          <div className="header__logo _dark">
+          </S.HeaderLogo>
+
+          {/* здесь было <div className="header__logo _dark"> */}
+
+          <S.HeaderLogo>
             <a href="" target="_self">
               <img src="/logo_dark.png" alt="logo" />
             </a>
-          </div>
+          </S.HeaderLogo>
           <S.HeaderNav>
-            <button
-              onClick={addCard}
-              className="header__btn-main-new _hover01"
-              id="btnMainNew"
-            >
+            <S.HeaderBtnMainNew onClick={addCard} id="btnMainNew">
               <a>Создать новую задачу</a>
-            </button>
-            <a className="header__user _hover02" onClick={toogleDropdown}>
-              Ivan Ivanov
-            </a>
+            </S.HeaderBtnMainNew>
+            <S.HeaderUser onClick={toogleDropdown}>Ivan Ivanov</S.HeaderUser>
             {isOpen && (
-              <div
-                className="header__pop-user-set pop-user-set"
-                id="user-set-target"
-              >
+              <S.HeaderPopUserSet id="user-set-target">
                 <S.PopUserSetName>Ivan Ivanov</S.PopUserSetName>
                 <S.PopUserSetMail>ivan.ivanov@gmail.com</S.PopUserSetMail>
                 <S.PopUserSetTheme>
                   <p>Темная тема</p>
                   <input type="checkbox" name="checkbox" />
                 </S.PopUserSetTheme>
-                <button type="button" className="_hover03">
+                <S.Button type="button">
                   <a href="#popExit">Выйти</a>
-                </button>
-              </div>
+                </S.Button>
+              </S.HeaderPopUserSet>
             )}
           </S.HeaderNav>
         </S.HeaderBlock>
