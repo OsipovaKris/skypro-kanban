@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { topicStyles } from "../Styles/Common.styled";
 
 export const CardsItem = styled.div`
   padding: 5px;
@@ -28,14 +29,19 @@ export const CardGroup = styled.div`
   justify-content: space-between;
 `;
 
-// здесь стили для card__theme
+export const CardTheme = styled.div`
+  width: auto;
+  height: 20px;
+  padding: 5px 14px;
+  border-radius: 18px;
+  ${(props) => topicStyles[props.$color]};
 
-// export const CardTheme = styled.div`
-//   width: auto;
-//   height: 20px;
-//   padding: 5px 14px;
-//   border-radius: 18px;
-// `;
+  p {
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 5px;
+  }
+`;
 
 export const CardBtn = styled.div`
   width: 24px;
@@ -73,6 +79,7 @@ export const CardDate = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding-top: 35px;
 
   svg {
     width: 13px;

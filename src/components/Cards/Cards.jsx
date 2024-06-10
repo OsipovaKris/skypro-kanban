@@ -1,25 +1,14 @@
 import * as S from "./Card.styled";
+import { topicColor } from "../Styles/Common.styled";
 
 function Cards({ title, date, topic }) {
-  let topicStyle;
-
-  if (topic === "Web Design") {
-    topicStyle = "_orange";
-  }
-  if (topic === "Research") {
-    topicStyle = "_green";
-  }
-  if (topic === "Copywriting") {
-    topicStyle = "_purple";
-  }
-
   return (
     <S.CardsItem>
       <S.CardsCard>
         <S.CardGroup>
-          <div className={"card__theme " + topicStyle}>
-            <p className={topicStyle}>{topic}</p>
-          </div>
+          <S.CardTheme $color={topicColor[topic]}>
+            <p>{topic}</p>
+          </S.CardTheme>
           <a href="#popBrowse" target="_self">
             <S.CardBtn>
               <div></div>
