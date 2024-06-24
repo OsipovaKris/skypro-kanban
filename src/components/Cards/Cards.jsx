@@ -1,36 +1,27 @@
+import * as S from "./Card.styled";
+import { topicColor } from "../Styles/Common.styled";
+
 function Cards({ title, date, topic }) {
-  let topicStyle;
-
-  if (topic === "Web Design") {
-    topicStyle = "_orange";
-  }
-  if (topic === "Research") {
-    topicStyle = "_green";
-  }
-  if (topic === "Copywriting") {
-    topicStyle = "_purple";
-  }
-
   return (
-    <div className="cards__item">
-      <div className="cards__card card">
-        <div className="card__group">
-          <div className={"card__theme " + topicStyle}>
-            <p className={topicStyle}>{topic}</p>
-          </div>
+    <S.CardsItem>
+      <S.CardsCard>
+        <S.CardGroup>
+          <S.CardTheme $color={topicColor[topic]}>
+            <p>{topic}</p>
+          </S.CardTheme>
           <a href="#popBrowse" target="_self">
-            <div className="card__btn">
+            <S.CardBtn>
               <div></div>
               <div></div>
               <div></div>
-            </div>
+            </S.CardBtn>
           </a>
-        </div>
-        <div className="card__content">
+        </S.CardGroup>
+        <S.CardContent>
           <a href="" target="_blank">
-            <h3 className="card__title">{title}</h3>
+            <S.CardTitle>{title}</S.CardTitle>
           </a>
-          <div className="card__date">
+          <S.CardDate>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="13"
@@ -60,10 +51,10 @@ function Cards({ title, date, topic }) {
               </defs>
             </svg>
             <p>{date}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+          </S.CardDate>
+        </S.CardContent>
+      </S.CardsCard>
+    </S.CardsItem>
   );
 }
 

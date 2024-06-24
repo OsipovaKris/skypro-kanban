@@ -1,12 +1,14 @@
+import * as S from "./Main.styled";
+import { Container } from "../Styles/Common.styled";
 import Column from "../Column/Column";
 import { statusList } from "../../../data";
 
 function Main({ cardsList, isLoading }) {
   return (
-    <main className="main">
-      <div className="container">
-        <div className="main__block">
-          <div className="main__content">
+    <S.Main>
+      <Container>
+        <S.MainBlock>
+          <S.MainContent>
             {isLoading ? (
               "Данные загружаются"
             ) : (
@@ -22,10 +24,10 @@ function Main({ cardsList, isLoading }) {
                 ))}
               </>
             )}
-          </div>
-        </div>
-      </div>
-    </main>
+          </S.MainContent>
+        </S.MainBlock>
+      </Container>
+    </S.Main>
   );
 }
 

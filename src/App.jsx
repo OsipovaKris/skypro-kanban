@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import "./App.css";
+import { GlobalStyle } from "./components/Styles/Global.styled";
+import { Wrapper } from "./components/Styles/Common.styled";
 import Header from "./components/Header/Header";
 import PopBrowse from "./components/Popups/PopBrowse";
 import PopNewCard from "./components/Popups/PopNewCard";
@@ -21,7 +23,8 @@ function App() {
 
   return (
     <>
-      <div className="wrapper">
+      <GlobalStyle />
+      <Wrapper>
         <PopExit />
 
         <PopNewCard />
@@ -31,7 +34,7 @@ function App() {
         <Header setCardsList={setCardsList} cardsList={cardsList} />
 
         <Main cardsList={cardsList} isLoading={isLoading} />
-      </div>
+      </Wrapper>
 
       <script src="js/script.js"></script>
     </>
